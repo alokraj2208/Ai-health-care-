@@ -804,6 +804,17 @@ async function sendMessage() {
   conversationHistory.push({ role: 'user', content: text });
 
   showTyping();
+
+setTimeout(() => {
+  removeTyping();
+
+  const reply = getAIResponse(text);
+  addMessage(reply, false);
+
+  isLoading = false;
+  sendBtn.disabled = false;
+  input.focus();
+}, 800);
     removeTyping();
     addMessage('Network error aa gayi. Internet connection check karein aur dobara try karein.', false);
   }
