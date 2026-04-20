@@ -828,6 +828,27 @@ function askQuick(question) {
   autoResize(input);
   sendMessage();
 }
+ function getAIResponse(text) {
+  text = text.toLowerCase();
+
+  if(text.includes("sar dard") || text.includes("headache")) {
+    return "Sar dard ke liye:\n• Rest karein\n• Paani piyen\n\n⚠️ Zyada dard ho to doctor se milen.";
+  }
+
+  if(text.includes("diabetes")) {
+    return "Diabetes ke symptoms:\n• Zyada pyaas\n• Thakan\n• Bar-bar peshab\n\n👉 Test karwana zaroori hai.";
+  }
+
+  if(text.includes("fever") || text.includes("bukhaar")) {
+    return "Bukhaar me:\n• Rest karein\n• Paani piyen\n\n⚠️ High fever ho to doctor se milen.";
+  }
+
+  if(text.includes("chest pain")) {
+    return "🚨 Chest pain serious ho sakta hai!\n\n👉 Turant doctor ya hospital jaayein.";
+  }
+
+  return "Main HealthCare AI hoon 😊\n\nKripya apna sawaal detail me poochein.\n\n⚠️ Yeh doctor ka replacement nahi hai.";
+ }
 </script>
 
 </body>
